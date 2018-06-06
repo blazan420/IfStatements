@@ -24,8 +24,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String textFieldValue = edtNumber.getText() + "";
+                int intValue = Integer.parseInt(textFieldValue);
 
                 String result = "";
+
 
                 /*if (textFieldValue.contains("420")) {
                     //  txtResult.setText(textFieldValue + " Blaze IT!");
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }*/
 
-                if (textFieldValue.contains("90")) {
+                /*if (textFieldValue.contains("90")) {
                     result = "Your Grade is A and your number is: " + textFieldValue;
                 } else if (textFieldValue.contains("80")) {
                     result = "Your Grade is B and your number is: " + textFieldValue;
@@ -50,17 +52,26 @@ public class MainActivity extends AppCompatActivity {
                     result = "you are not sufficient";
                 }
             {
+                txtResult.setText(result);*/
+
+                if (intValue > 90) {
+                    result = "Your Grade  is A And your number is: " + intValue;
+                } else if (intValue > 80) {
+                    result = "Your Grade is B And your number is: " + intValue;
+                } else if (intValue >= 70) {
+                    result = "Your Grade is C And your number is: " + intValue;
+                } else if (intValue > 60) {
+                    result = "Your Grade is F and your number is: " + intValue;
+                } else {
+                    result = "You are not accepted";
+                }
+
                 txtResult.setText(result);
+
+
             }
+        });
+    }
 
 
-
-
-
-                txtResult.setText(result);
-
-        }
-    });
-
-}
 }
